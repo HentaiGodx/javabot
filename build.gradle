@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+    id "com.heroku.sdk.heroku-gradle" version "1.0.4"
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+task stage(dependsOn: ['build', 'clean'])
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+dependencies {
+    compile 'net.dv8tion:JDA:4.1.0_81'
+}
+
+repositories {
+    jcenter()
+}
